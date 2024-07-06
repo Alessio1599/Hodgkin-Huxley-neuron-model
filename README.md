@@ -31,22 +31,38 @@ The model consists of four first-order ordinary differential equations (ODEs) fo
 3. Sodium inactivation gate kinetics (Equation 3)
 4. Potassium activation gate kinetics (Equation 4)
 
+$$
+C \frac{dV}{dt} + g_{Na\_max} m^3 h (V - E_{Na}) + g_{k\_max} n^4 (V - E_k) + g_{eq} (V - E_{eq}) = i \quad (1)
+$$
+
+$$
+\frac{dm}{dt} = \alpha_m (V) (1 - m) - \beta_m (V) m \quad (2)
+$$
+
+$$
+\frac{dh}{dt} = \alpha_h (V) (1 - h) - \beta_h (V) h \quad (3)
+$$
+
+$$
+\frac{dn}{dt} = \alpha_n (V) (1 - n) - \beta_n (V) n \quad (4)
+$$
+
 Parameters used in the model:
-- \( g_{Na\_max} = 120 \)
-- \( g_{k\_max} = 36 \)
-- \( g_{eq} = 0.3 \)
-- \( C = 4 \)
-- \( E_{Na} = 55 \)
-- \( E_k = -77 \)
-- \( E_{eq} = -54.4 \)
+- $g_{Na\_max} = 120$
+- $g_{k\_max} = 36$
+- $g_{eq} = 0.3$
+- $C = 4$
+- $E_{Na} = 55$
+- $E_k = -77$
+- $E_{eq} = -54.4$
 
 Initial conditions:
-- \( V_0 = -65 \) mV
+- $V_{0} = -65$ mV
 - Initial gating variables (m, n, h) set to maintain equilibrium in the absence of current.
 
 ## Numerical Experimentation
 
-Three numerical methods were used to solve the Hodgkin-Huxley model: Euler Explicit, Euler Implicit, and Heun’s method. The solution computed using MATLAB's ODE45 function (with a relative error tolerance of \( 10^{-10} \)) served as the exact solution.
+Three numerical methods were used to solve the Hodgkin-Huxley model: Euler Explicit, Euler Implicit, and Heun’s method. The solution computed using MATLAB's ODE45 function (with a relative error tolerance of \( 10_^{-10} \)) served as the exact solution.
 
 ### Stability Analysis
 
