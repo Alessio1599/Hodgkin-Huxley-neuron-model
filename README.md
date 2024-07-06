@@ -23,7 +23,7 @@ The Hodgkin-Huxley (H.H.) model describes the electrical characteristics of exci
 
 ## Description of the Mathematical Model
 
-The model consists of four first-order ordinary differential equations (ODEs) for the state variables $V$, $m$, $h$, and $n$, and six algebraic equations for the rates of channel gating.
+The model consists of four non linear first-order ordinary differential equations (ODEs) for the state variables $V$, $m$, $h$, and $n$, and six algebraic equations for the rates of channel gating.
 
 ### Differential Equations
 
@@ -44,7 +44,7 @@ $$
 $$
 
 ### Parameters
-
+In this work, the solution was obtained by imposing a current value of i=6 with the aim to visualize the genesis of a single spike of the action potential. The parameter used were taken from the literature and are:
 - $g_{Na\_max} = 120$
 - $g_{k\_max} = 36$
 - $g_{eq} = 0.3$
