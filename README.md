@@ -20,7 +20,6 @@ The Hodgkin-Huxley (H.H.) model describes the electrical characteristics of exci
 1. **Presence of a Threshold:** An action potential is produced only if the membrane potential exceeds a certain value (typically around -55 mV).
 2. **Stereotyped Form:** The action potential is "all or nothing," meaning once the threshold is exceeded, the shape of the action potential is consistent, regardless of stimulus strength.
 
-![Action Potential](path_to_figure_2_image)
 
 ## Description of the Mathematical Model
 
