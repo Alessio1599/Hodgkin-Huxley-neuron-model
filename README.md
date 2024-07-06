@@ -43,6 +43,35 @@ $$
 \frac{dn}{dt} = \alpha_n (V) (1 - n) - \beta_n (V) n \quad (4)
 $$
 
+### Auxiliary Variables
+
+The auxiliary variables $\alpha_m(V)$, $\beta_m(V)$, $\alpha_h(V)$, $\beta_h(V)$, $\alpha_n(V)$, and $\beta_n(V)$ are given by the following expressions:
+
+$$
+\alpha_m(V) = \frac{0.1 \left( -40 - V \right)}{\exp\left(\frac{-40 - V}{10}\right) - 1}
+$$
+
+$$
+\beta_m(V) = 4 \exp\left(\frac{-65 - V}{18}\right)
+$$
+
+$$
+\alpha_h(V) = 0.07 \exp\left(\frac{-65 - V}{20}\right)
+$$
+
+$$
+\beta_h(V) = \frac{1}{\exp\left(\frac{-35 - V}{10}\right) + 1}
+$$
+
+$$
+\alpha_n(V) = \frac{0.01 \left( -55 - V \right)}{\exp\left(\frac{-55 - V}{10}\right) - 1}
+$$
+
+$$
+\beta_n(V) = 0.125 \exp\left(\frac{-65 - V}{80}\right)
+$$
+
+
 ### Parameters
 In this work, the solution was obtained by imposing a current value of i=6 with the aim to visualize the genesis of a single spike of the action potential. The parameter used were taken from the literature and are:
 - $g_{Na\_max} = 120$
