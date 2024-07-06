@@ -20,16 +20,13 @@ The Hodgkin-Huxley (H.H.) model describes the electrical characteristics of exci
 1. **Presence of a Threshold:** An action potential is produced only if the membrane potential exceeds a certain value (typically around -55 mV).
 2. **Stereotyped Form:** The action potential is "all or nothing," meaning once the threshold is exceeded, the shape of the action potential is consistent, regardless of stimulus strength.
 
+![Action Potential](path_to_figure_2_image)
+
 ## Description of the Mathematical Model
 
-The model consists of four first-order ordinary differential equations (ODEs) for the state variables V, m, h, and n, and six algebraic equations for the rates of channel gating.
+The model consists of four first-order ordinary differential equations (ODEs) for the state variables $V$, $m$, $h$, and $n$, and six algebraic equations for the rates of channel gating.
 
 ### Differential Equations
-
-1. Membrane potential variation (Equation 1)
-2. Sodium activation gate kinetics (Equation 2)
-3. Sodium inactivation gate kinetics (Equation 3)
-4. Potassium activation gate kinetics (Equation 4)
 
 $$
 C \frac{dV}{dt} + g_{Na\_max} m^3 h (V - E_{Na}) + g_{k\_max} n^4 (V - E_k) + g_{eq} (V - E_{eq}) = i \quad (1)
@@ -47,7 +44,8 @@ $$
 \frac{dn}{dt} = \alpha_n (V) (1 - n) - \beta_n (V) n \quad (4)
 $$
 
-Parameters used in the model:
+### Parameters
+
 - $g_{Na\_max} = 120$
 - $g_{k\_max} = 36$
 - $g_{eq} = 0.3$
@@ -56,21 +54,24 @@ Parameters used in the model:
 - $E_k = -77$
 - $E_{eq} = -54.4$
 
-Initial conditions:
+### Initial Conditions
+
 - $V_{0} = -65$ mV
-- Initial gating variables (m, n, h) set to maintain equilibrium in the absence of current.
+- $m_{0} = 0.05$
+- $n_{0} = 0.2$
+- $h_{0} = 0.6$
 
 ## Numerical Experimentation
 
-Three numerical methods were used to solve the Hodgkin-Huxley model: Euler Explicit, Euler Implicit, and Heun’s method. The solution computed using MATLAB's ODE45 function (with a relative error tolerance of \( 10_^{-10} \)) served as the exact solution.
+Three numerical methods were used to solve the Hodgkin-Huxley model: Euler Explicit, Euler Implicit, and Heun’s method. The solution computed using MATLAB's ODE45 function (with a relative error tolerance of $10^{-10}$) served as the exact solution.
 
 ### Stability Analysis
 
-Experiments were conducted with step sizes \( h = 0.01, 0.1, 0.3, \) and \( 0.5 \). Stability and accuracy of each method were analyzed:
+Experiments were conducted with step sizes $h = 0.01, 0.1, 0.3,$ and $0.5$. Stability and accuracy of each method were analyzed:
 
-1. **Euler Explicit:** Stable for \( h = 0.01 \) and \( 0.1 \). Unstable for \( h = 0.3 \) and \( 0.5 \).
+1. **Euler Explicit:** Stable for $h = 0.01$ and $0.1$. Unstable for $h = 0.3$ and $0.5$.
 2. **Euler Implicit:** Stable but less accurate for larger step sizes.
-3. **Heun's Method:** Stable for smaller step sizes but unstable for \( h = 0.5 \).
+3. **Heun's Method:** Stable for smaller step sizes but unstable for $h = 0.5$.
 
 ### Order of Accuracy
 
