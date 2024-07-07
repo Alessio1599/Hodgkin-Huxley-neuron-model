@@ -3,6 +3,7 @@ close all
 clear all
 
 addpath('Numerical methods')
+addpath('Auxiliary functions')
 
 %% Parameters
 global gNa  gK  gEq C ENa EK EEq
