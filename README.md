@@ -77,10 +77,10 @@ In this work, the solution was obtained by imposing a current value of i=6 with 
 - $g_{Na\_max} = 120$
 - $g_{k\_max} = 36$
 - $g_{eq} = 0.3$
-- $C = 4$
-- $E_{Na} = 55$
-- $E_k = -77$
-- $E_{eq} = -54.4$
+- $C = 4$ pF
+- $E_{Na} = 55$ mV
+- $E_k = -77$ mV
+- $E_{eq} = -54.4$ mV
 
 ### Initial Conditions
 
