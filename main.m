@@ -34,9 +34,9 @@ ode3=diff(h,t)==0.07*exp((-65-V)/20)*(1-h)-1/(exp((-35-V)/10)+1)*h;
 ode4=diff(n,t)==0.01*((-55-V)/(exp((-55-V)/10 )-1))*(1-n)-0.125*exp((-65-V)/80)*n;
 S=dsolve(ode1,ode2,ode3,ode4,V(0)==V0, m(0)==m0, h(0)==h0, n(0)==n0);   
 
-%% Euler explicit
 h=0.3; %step size
 
+%% Euler explicit
 [tEE,XEE]=eul_exp(@fun,tspan,X0,h);
 
 plot(tEE,XEE(:,1))
