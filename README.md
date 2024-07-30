@@ -28,7 +28,7 @@ The model consists of four non linear first-order ordinary differential equation
 ### Differential Equations
 
 $$
-C \frac{dV}{dt} + g_{Na\_max} m^3 h (V - E_{Na}) + g_{k\_max} n^4 (V - E_k) + g_{eq} (V - E_{eq}) = i \quad (1)
+C \frac{dV}{dt} + g_{Na\_{max}} m^3 h (V - E_{Na}) + g_{k\_{max}} n^4 (V - E_k) + g_{eq} (V - E_{eq}) = i \quad (1)
 $$
 
 $$
@@ -74,8 +74,8 @@ $$
 
 ### Parameters
 In this work, the solution was obtained by imposing a current value of i=6 with the aim to visualize the genesis of a single spike of the action potential. The parameter used were taken from the literature and are:
-- $g_{Na\_max} = 120$
-- $g_{k\_max} = 36$
+- $g_{Na\_{max}} = 120$
+- $g_{k\_{max}} = 36$
 - $g_{eq} = 0.3$
 - $C = 4$ pF
 - $E_{Na} = 55$ mV
