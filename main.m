@@ -33,6 +33,7 @@ ode2=diff(m,t)==0.1*((-40-V)/(exp((-40-V)/10)-1))*(1-m)-4*exp((-65-V)/18)*m;
 ode3=diff(h,t)==0.07*exp((-65-V)/20)*(1-h)-1/(exp((-35-V)/10)+1)*h;
 ode4=diff(n,t)==0.01*((-55-V)/(exp((-55-V)/10 )-1))*(1-n)-0.125*exp((-65-V)/80)*n;
 S=dsolve(ode1,ode2,ode3,ode4,V(0)==V0, m(0)==m0, h(0)==h0, n(0)==n0);   
+
 %% Euler explicit
 h=0.3; %step size
 
@@ -42,6 +43,7 @@ plot(tEE,XEE(:,1))
     title('Numerical solution using Euler explicit')
     ylabel('Membrane potential [mV]')
     xlabel('Time [ms]')
+
 %% Euler implicit
 [tEI, XEI]=eul_imp(@fun,@jacf,tspan,X0,h);
 
@@ -50,6 +52,7 @@ plot(tEI,XEI(:,1))
     title('Numerical solution using Euler implicit')
     ylabel('Membrane potential [mV]')
     xlabel('Time [ms]')
+
 %% Heun's method
 [tH, XH]=heun(@fun,tspan,X0,h);
 
@@ -96,7 +99,6 @@ plot(t45,X45(:,2),'b',t45,X45(:,3),'g',t45,X45(:,4),'m')
 
 %% Quantitative comparison between the solutions
 X_45=spline(t45,X45(:,1),tEE');
-
 eEE=norm(X_45-XEE(:,1))/norm(X_45(:,1))
 
 X_45=spline(t45,X45(:,1),tEI');
@@ -105,10 +107,9 @@ eEI=norm(X_45-XEI(:,1))/norm(X_45(:,1))
 X_45=spline(t45,X45(:,1),tH');
 eH=norm(X_45-XH(:,1))/norm(X_45(:,1))
 
-%% Considering different step sizes h
-h=[0.01 0.1 0.3 0.5];
+h=[0.01 0.1 0.3 0.5]; % Considering different step sizes h
 n=length(h);
-%initialization of the vectors that will contain the relative errors
+% Initialization of the vectors that will contain the relative errors
 eEE=zeros(n,1);
 eEI=zeros(n,1);
 eH=zeros(n,1);
